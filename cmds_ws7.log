@@ -1,3 +1,0 @@
- 1  sed 's/[.,;]//g; s/ and //g; s/ or //g; s/ if //g; s/ in //g; s/ it //g; s/<[^>]\+>//g' PRODUCTS/B004LLIKVU.txt > PRODUCTS/B004LLIKVU_1.txt
- 2  awk 'BEGIN{FS = "\t"} ; {print $13}' PRODUCTS/B004LLIKVU_1.txt > PRODUCTS/B004LLIKVU_reviewBody.txt
- 3  history > cmds_ws7.log
