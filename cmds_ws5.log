@@ -1,4 +1,0 @@
-  1  script ws5.txt
-  2  vi ws5_script.sh
-  3  bash ws5_script.sh
-  4  history > cmds_ws5.log
