@@ -1,3 +1,0 @@
-     word count    character count       file
-         1439           588540       verified.txt
-       3104082         549581161    unverified.txt
