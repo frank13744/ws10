@@ -1,0 +1,50 @@
+Script started on 2021-12-02 20:24:47+00:00 [TERM="xterm" TTY="/dev/pts/0" COLUMNS="198" LINES="55"]
+]0;cai@f6linux2: ~cai@f6linux2:~$ vi numbers.sh
+[?1049h[22;0;0t[>4;2m[?1h=[?2004h[1;55r[?12h[?12l[22;2t[22;1t[27m[23m[29m[m[H[2J[?25l[55;1H"numbers.sh" 28L, 530C[2;1H▽[6n[2;1H  [1;1H[>c]10;?]11;?[1;1H[34m#!/bin/bash[m
+[36mFile[m=[33m"[m[31mamazon_reviews_us_Books_v1_02.tsv[m[33m"[m
+
+awk [33m'[m
+[31m    BEGIN {
+        FS="\t";
+        count=0;
+        max_num=0;
+        min_num=99999;
+        sum_of_nums=0
+        num=0;
+    }
+    NR > 1 {
+        ++count;
+        num=$9;
+        if ( max_num < num ) {
+            max_num=num;
+        }
+        if ( min_num > num ) {
+            min_num=num;
+        }
+        sum_of_nums=sum_of_nums + num;
+    }
+    END {
+        avg=sum_of_nums/count;
+        print( "min " min_num " max " max_num " avg " avg );
+    }[m
+[33m'[m [35m$File[m
+[1m[34m~                                                                                                                                                                                                     [30;1H~                                                                                                                                                                                                     [31;1H~                                                                                                                                                                                                     [32;1H~                                                                                                                                                                                                     [33;1H~                                                                                                                                                                                                     [34;1H~                                                                                                                                                                                                     [35;1H~                                                                                                                                                                                                     [36;1H~                                                                                                                                                                                                     [37;1H~                                                                                                                                                                                                     [38;1H~                                                                                                                                                                                                     [39;1H~                                                                                                                                                                                                     [40;1H~                                                                                                                                                                                                     [41;1H~                                                                                                                                                                                                     [42;1H~                                                                                                                                                                                                     [43;1H~                                                                                                                                                                                                     [44;1H~                                                                                                                                                                                                     [45;1H~                                                                                                                                                                                                     [46;1H~                                                                                                                                                                                                     [47;1H~                                                                                                                                                                                                     [48;1H~                                                                                                                                                                                                     [49;1H~                                                                                                                                                                                                     [50;1H~                                                                                                                                                                                                     [51;1H~                                                                                                                                                                                                     [52;1H~                                                                                                                                                                                                     [53;1H~                                                                                                                                                                                                     [54;1H~                                                                                                                                                                                                     [m[55;181H2,39[10CAll[2;39H[?25h[?25l[55;171H:[2;39H[55;1H[K[55;1H:[?2004h[?25hx[?25l[?2004l[23;2t[23;1t[55;1H[K[55;1H[?2004l[?1l>[?25h[>4;m[?1049l[23;0;0t]0;cai@f6linux2: ~cai@f6linux2:~$ chmod +x numbers.sh
+]0;cai@f6linux2: ~cai@f6linux2:~$ time python3 numbers.py
+min 0 max 15835 avg 9.33467921636312
+
+real	0m12.078s
+user	0m10.644s
+sys	0m1.023s
+]0;cai@f6linux2: ~cai@f6linux2:~$ time ./numbers.sh
+min 0 max 15835 avg 9.33468
+
+real	0m17.966s
+user	0m17.059s
+sys	0m0.896s
+]0;cai@f6linux2: ~cai@f6linux2:~$ 
+]0;cai@f6linux2: ~cai@f6linux2:~$ history > cmds.log
+]0;cai@f6linux2: ~cai@f6linux2:~$ exit
+
+The python file is faster than the shell script
+
+Script done on 2021-12-02 20:26:44+00:00 [COMMAND_EXIT_CODE="0"]
